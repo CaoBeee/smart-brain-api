@@ -34,8 +34,8 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(cors())
 
-app.get('/', (req, res) => {
-	res.send('<p>success<p>')
+app.get('https://facerecognitionbrain-caobeee.onrender.com/', (req, res) => {
+	res.send('Success')
 })
 
 app.post('/signin', (req, res) => {
