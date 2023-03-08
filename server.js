@@ -11,7 +11,7 @@ const image = require('./controllers/image')
 const postgres = knex({
 	client: 'pg',
 	connection: {
-		host: process.env.DATABASE_URL,
+		host: process.env.DB_URL,
 		user: 'caobeee',
 		password: process.env.DB_PASSWORD,
 		database: 'smart_brain_9n31',
@@ -56,5 +56,5 @@ app.post('/imageurl', (req, res) => {
 })
 
 app.listen(process.env.PORT || 3000, () => {
-	console.log('app is running on port 3000')
+	console.log(`app is running on port ${process.env.PORT}`)
 })
