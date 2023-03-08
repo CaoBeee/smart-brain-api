@@ -8,16 +8,14 @@ const signIn = require('./controllers/signIn')
 const profile = require('./controllers/profile')
 const image = require('./controllers/image')
 
-const connectionString =
-	'postgres://caobeee:qSTpKBRaQdjFkYQ97xbKllwmyzsxBidY@dpg-cg42381mbg5d882t9qcg-a/smart_brain_9n31'
 const postgres = knex({
 	client: 'pg',
 	connection: {
 		connectionString: process.env.DB_URL,
-		user: 'caobeee',
-		password: process.env.DB_PASSWORD,
-		database: 'smart_brain_9n31',
-		port: 5432,
+		// user: 'caobeee',
+		// password: process.env.DB_PASSWORD,
+		// database: 'smart_brain_9n31',
+		// port: 5432,
 	},
 })
 
@@ -34,8 +32,8 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(cors())
 
-app.get('https://facerecognitionbrain-caobeee.onrender.com/', (req, res) => {
-	res.send('Success')
+app.get('/', (req, res) => {
+	// res.send('Success')
 })
 
 app.post('/signin', (req, res) => {
