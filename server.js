@@ -12,10 +12,6 @@ const postgres = knex({
 	client: 'pg',
 	connection: {
 		connectionString: process.env.DB_URL,
-		// user: 'caobeee',
-		// password: process.env.DB_PASSWORD,
-		// database: 'smart_brain_9n31',
-		// port: 5432,
 	},
 })
 
