@@ -8,13 +8,16 @@ const signIn = require('./controllers/signIn')
 const profile = require('./controllers/profile')
 const image = require('./controllers/image')
 
+const connectionString =
+	'postgres://caobeee:qSTpKBRaQdjFkYQ97xbKllwmyzsxBidY@dpg-cg42381mbg5d882t9qcg-a/smart_brain_9n31'
 const postgres = knex({
 	client: 'pg',
 	connection: {
-		host: process.env.DB_URL,
+		connectionString: process.env.DB_URL,
 		user: 'caobeee',
 		password: process.env.DB_PASSWORD,
 		database: 'smart_brain_9n31',
+		port: 5432,
 	},
 })
 
@@ -32,7 +35,7 @@ app.use(express.json())
 app.use(cors())
 
 app.get('/', (req, res) => {
-	res.send('success')
+	res.send('<p>success<p>')
 })
 
 app.post('/signin', (req, res) => {
